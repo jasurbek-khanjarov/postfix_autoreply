@@ -1,0 +1,12 @@
+/var/postfix5/virtual
+order@mysite.com order.save@mysote.com, autoreply@localhost
+
+/var/postfix5/virtual_maps
+order@mysite.com    mysite.com/order/Maildir/
+order.save@mysite.com    mysite.com/order/Maildir/
+
+/var/postfix5/main.cf
+allow_mail_to_commands = forward, alias
+
+/home/autoreply/.forward
+\autoreply, "|sh /home/autoreply/reply.sh"
